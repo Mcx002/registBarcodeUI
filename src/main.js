@@ -3,11 +3,18 @@ import App from './App.vue'
 import router from './router'
 import store from './stores'
 import axios from 'axios'
+import { BootstrapVue, IconsPlugin } from 'bootstrap-vue'
+import Swal from 'vue-sweetalert2'
 
+import 'bootstrap/dist/css/bootstrap.css'
+import 'bootstrap-vue/dist/bootstrap-vue.css'
+import 'sweetalert2/dist/sweetalert2.min.css'
 
-axios.defaults.baseURL = 'http://192.168.43.126:4000/'
+axios.defaults.baseURL = 'http://localhost:4000/'
 Vue.config.productionTip = false
-
+Vue.use(BootstrapVue)
+Vue.use(IconsPlugin)
+Vue.use(Swal)
 new Vue({
   router,
   store,

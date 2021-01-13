@@ -5,7 +5,7 @@ export default [
     {
         path: '/login',
         name: 'Login',
-        component: Login
+        component: Login,
     },
     {
         path: '/register',

@@ -3,10 +3,16 @@ import VueRouter from 'vue-router'
 import Home from '@/views/Home.vue'
 
 import auth from './modules/auth'
+import dashboard from './modules/dashboard'
 
 Vue.use(VueRouter)
 
 const routes = [
+  {
+    // will match everything
+    path: '*',
+    template:"<template><div>404</div></template>"
+  },
   {
     path: '/',
     name: 'Home',
@@ -20,7 +26,8 @@ const routes = [
     // which is lazy-loaded when the route is visited.
     component: () => import(/* webpackChunkName: "about" */ '../views/About.vue')
   },
-  ...auth
+  ...auth,
+  ...dashboard
 ]
 
 const router = new VueRouter({
